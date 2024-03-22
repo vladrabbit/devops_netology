@@ -1,1 +1,2 @@
 # devops_netology
+newline

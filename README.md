@@ -8,4 +8,4 @@
      файлы override.tf, override.tf.json и все файлы с любым иенем вместо звездочки *_override.tf, *_override.tf.json
      файлы с расширением .terraformrc и файл terraform.rc
 
- 
+ Newsecondline

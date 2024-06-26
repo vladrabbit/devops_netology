@@ -105,6 +105,9 @@ Hey, Netology
 
 В качестве ответа приложите скриншоты консоли, где видно все введенные команды и их вывод.
 
+## Решение 4
+
+![Скриншот](https://github.com/vladrabbit/hw_img/blob/main/task4-1.png)
 
 ## Задача 5
 
@@ -154,6 +157,40 @@ services:
 7. Удалите любой из манифестов компоуза(например compose.yaml).  Выполните команду "docker compose up -d". Прочитайте warning, объясните суть предупреждения и выполните предложенное действие. Погасите compose-проект ОДНОЙ(обязательно!!) командой.
 
 В качестве ответа приложите скриншоты консоли, где видно все введенные команды и их вывод, файл compose.yaml , скриншот portainer c задеплоенным компоузом.
+
+## Решение 5
+
+1. И выполните команду "docker compose up -d". Какой из файлов был запущен и почему? (подсказка: https://docs.docker.com/compose/compose-application-model
+
+ - Запускается compose.yaml так как в случае нескольких файлов docker-compose выбирается compose.yaml
+
+2. Отредактируйте файл compose.yaml так, чтобы были запущенны оба файла.
+
+```yaml
+include:
+  - docker-compose.yaml
+services:
+  portainer:
+    image: portainer/portainer-ce:latest
+    ports:
+      - "9000:9000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+```
+Из файла убрал строку network_mode: host так как в этой версии docker-compose данная команда конфликтует с мапингом портов
+
+[скриншот](https://github.com/vladrabbit/hw_img/blob/main/task-5-1.png)
+3. Выполните в консоли вашей хостовой ОС необходимые команды чтобы залить образ custom-nginx как custom-nginx:latest в запущенное вами, локальное registry.
+
+[Скриншот](https://github.com/vladrabbit/hw_img/blob/main/task-5-2.png)
+
+6.  Перейдите на страницу "http://127.0.0.1:9000/#!/2/docker/containers", выберите контейнер с nginx и нажмите на кнопку "inspect".
+
+[скриншот](https://github.com/vladrabbit/hw_img/blob/main/task-5-3.png)
+
+7. Удалите любой из манифестов компоуза(например compose.yaml).  Выполните команду "docker compose up -d".
+
+[скриншот](https://github.com/vladrabbit/hw_img/blob/main/task-5-4.png)
 
 ---
 

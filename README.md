@@ -179,18 +179,18 @@ services:
 ```
 Из файла убрал строку network_mode: host так как в этой версии docker-compose данная команда конфликтует с мапингом портов
 
-[скриншот](https://github.com/vladrabbit/hw_img/blob/main/task-5-1.png)
+![скриншот](https://github.com/vladrabbit/hw_img/blob/main/task-5-1.png)
 3. Выполните в консоли вашей хостовой ОС необходимые команды чтобы залить образ custom-nginx как custom-nginx:latest в запущенное вами, локальное registry.
 
-[Скриншот](https://github.com/vladrabbit/hw_img/blob/main/task-5-2.png)
+![Скриншот](https://github.com/vladrabbit/hw_img/blob/main/task-5-2.png)
 
 6.  Перейдите на страницу "http://127.0.0.1:9000/#!/2/docker/containers", выберите контейнер с nginx и нажмите на кнопку "inspect".
 
-[скриншот](https://github.com/vladrabbit/hw_img/blob/main/task-5-3.png)
+![скриншот](https://github.com/vladrabbit/hw_img/blob/main/task-5-3.png)
 
 7. Удалите любой из манифестов компоуза(например compose.yaml).  Выполните команду "docker compose up -d".
 
-[скриншот](https://github.com/vladrabbit/hw_img/blob/main/task-5-4.png)
+![скриншот](https://github.com/vladrabbit/hw_img/blob/main/task-5-4.png)
 
 ---
 
